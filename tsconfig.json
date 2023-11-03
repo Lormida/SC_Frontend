@@ -2,27 +2,54 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "ESNext",
+    "moduleResolution": "bundler",
     "target": "ESNext",
-    "lib": ["DOM", "ESNext", "dom.iterable"],
-    "strict": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2015.Iterable",
+      "ES2018.AsyncIterable",
+      "ES2015",
+      "ES2017",
+      "ES2018",
+      "ES2019",
+      "ES6",
+      "ESNext"
+    ],
     "jsx": "preserve",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "noUnusedLocals": true,
-    // "resolveModuleNameLiterals": "bundler",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
     "noUnusedParameters": true,
+    "strict": true,
     "strictNullChecks": true,
     "allowJs": true,
+    "pretty": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "./router-meta.d.ts"],
+    "types": [
+      "node",
+      "vite/client",
+      "./typings/env.d.ts",
+      "./typings/router-meta.d.ts",
+      "./typings/shared-kernel.d.ts"
+    ],
     "paths": {
       "~/*": ["src/*"],
       "@shared/*": ["src/shared/*"],
       "@store/*": ["src/shared/store/*"]
     }
   },
-  "includes": ["src/**/*.ts", "src/**/*.d.ts", "./router-meta.d.ts"],
+  "includes": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "./typings/env.d.ts",
+    "./typings/router-meta.d.ts",
+    "./typings/shared-kernel.d.ts"
+  ],
   "exclude": ["dist", "node_modules"]
 }

@@ -9,11 +9,13 @@ pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```bash
 pnpm run docker:run:dev
 ```
+
 ### Create directus migration
 
 ```bash
 pnpm run directus:create-snapshot --name=test1
 ```
+
 - If you can't create migration within docker(due to lack of permissions) - use this command:
 
 ```bash

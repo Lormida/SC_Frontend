@@ -1,13 +1,13 @@
-@import "./_reset.scss";
-@import "./_palette.scss";
-@import "./_transitions.scss";
-@import "./_shadow.scss";
-@import "./_featured.scss";
-@import "./cursor";
-@import "./cyber";
+@import './_reset.scss';
+@import './_palette.scss';
+@import './_transitions.scss';
+@import './_shadow.scss';
+@import './_featured.scss';
+@import './cursor';
+@import './cyber';
 
 * {
-  font-family: "Turret Road", sans-serif;
+  font-family: 'Turret Road', sans-serif;
   // cursor: none;
 }
 
@@ -81,17 +81,16 @@ a:active {
       0 0 30px rgba(var(--orange-500));
   }
   &.red {
-    text-shadow:
-      0 0 3px rgba(var(--red-500)),
-      // 0 0 10px rgba(var(--red-500)),
-      // 0 0 20px rgba(var(--red-500)),
-      // 0 0 30px rgba(var(--red-500));
+    text-shadow: 0 0 3px rgba(var(--red-500));
+    // 0 0 10px rgba(var(--red-500)),
+    // 0 0 20px rgba(var(--red-500)),
+    // 0 0 30px rgba(var(--red-500));
   }
   &.emerald {
     text-shadow:
       0 0 3px rgba(var(--emerald-500)),
       0 0 10px rgba(var(--emerald-500)),
-      0 0 20px rgba(var(--emerald-500)),
+      0 0 20px rgba(var(--emerald-500));
   }
 
   &.cyan {
@@ -110,4 +109,3 @@ a:active {
       0 0 30px rgba(var(--violet-500));
   }
 }
-

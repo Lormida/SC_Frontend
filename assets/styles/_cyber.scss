@@ -49,7 +49,7 @@
 }
 
 .cybr-btn::after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   background-color: #000;
@@ -115,7 +115,7 @@
 }
 
 .cybr-input-wrapper::before {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   background-color: #fff;
@@ -170,7 +170,7 @@
 }
 
 .cybr-checkbox + label.cybr-label:before {
-  content: "";
+  content: '';
   margin-right: 0.625rem;
   display: inline-block;
   vertical-align: text-top;
@@ -203,7 +203,7 @@
 }
 
 .cybr-checkbox:checked + label.cybr-label:after {
-  content: "";
+  content: '';
   position: absolute;
   background: #fff;
   left: 0.1875rem;
@@ -235,11 +235,11 @@
   --internal-width: 0.875rem;
   --internal-height: 0.875rem;
   --internal-top-offset: calc((var(--external-height) - calc(var(--internal-height))) / 2);
-  --internal-left-offset: calc((var(--external-width) - calc(var(--internal-width))) / 2);;
+  --internal-left-offset: calc((var(--external-width) - calc(var(--internal-width))) / 2);
 }
 .cybr-radio:checked + label.cybr-label:before,
 .cybr-radio:not(:checked) + label.cybr-label:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -253,7 +253,7 @@
 
 .cybr-radio:checked + label.cybr-label:after,
 .cybr-radio:not(:checked) + label.cybr-label:after {
-  content: "";
+  content: '';
   width: var(--internal-width);
   height: var(--internal-height);
   background: #fff;

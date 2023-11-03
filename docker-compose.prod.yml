@@ -4,7 +4,7 @@ services:
     container_name: sc_database_container
     image: postgres:16
     env_file:
-      - environments/dev/.env.postgres.dev
+      - environments/prod/.env.postgres.prod
     volumes:
       - scatters-club-db-data:/var/lib/postgresql/data
       - ./directus/backups:/backups
@@ -15,29 +15,13 @@ services:
       - scatters-club-reverse-proxy-net
     command: postgres -c shared_preload_libraries=pg_stat_statements -c log_statement=all -c log_min_messages=INFO
 
-  pgadmin:
-    container_name: sc_pgadmin4_container
-    image: dpage/pgadmin4
-    restart: always
-    depends_on:
-      - database
-    env_file:
-      - environments/dev/.env.pgadmin.dev
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
-    ports:
-      - 5050:80
-    networks:
-      # - scatters-club-net
-      - scatters-club-reverse-proxy-net
-
   directus:
     container_name: sc_directus_container
     image: directus/directus:10.7
     depends_on:
       - database
     env_file:
-      - environments/dev/.env.directus.dev
+      - environments/prod/.env.directus.prod
     volumes:
       # - ./database:/directus/database:rw
       # - ./uploads:/directus/uploads:rw
@@ -56,14 +40,10 @@ services:
     build:
       context: .
       dockerfile: docker-configs/frontend/Dockerfile
-      target: development
-    command: pnpm run dev
+      target: production
     restart: always
     env_file:
-      - environments/dev/.env.frontend.dev
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - environments/prod/.env.frontend.prod
     networks:
       # - scatters-club-net
       - scatters-club-reverse-proxy-net
@@ -74,8 +54,8 @@ services:
       - frontend
     restart: always
     build:
-      context: ./docker-configs/nginx/dev
-      dockerfile: dev.Dockerfile
+      context: ./docker-configs/nginx/prod
+      dockerfile: prod.Dockerfile
     ports:
       - 3050:80
     links:

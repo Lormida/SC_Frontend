@@ -3,7 +3,8 @@
   "packageManager": "pnpm@8.7.1",
   "scripts": {
     "build": "vite build",
-    "dev": "dotenv -e ./envs/dev/.env.frontend.dev -- vite --host",
+    "dev": "dotenv -e ./environments/dev/.env.frontend.dev -- vite --host",
+    "start:prod": "dotenv -e ./environments/dev/.env.frontend.dev -- NODE_ENV=production node build/server.js",
     "format": "prettier -w -u .",
     "lint:fix": "eslint --ext .js,.ts,.vue --ignore-path .eslintignore --fix .",
     "typecheck": "vue-tsc --noEmit && tsc --noEmit",
@@ -33,6 +34,8 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
     "@iconify-json/carbon": "^1.1.21",
     "@iconify-json/fluent": "^1.1.39",
     "@types/base-64": "^1.0.1",
@@ -43,7 +46,6 @@
     "@unocss/eslint-config": "^0.57.1",
     "@unocss/reset": "^0.57.1",
     "@vitejs/plugin-vue": "^4.4.0",
-    "@vue-macros/volar": "^0.17.2",
     "@vue/eslint-config-standard": "^8.0.1",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.52.0",
