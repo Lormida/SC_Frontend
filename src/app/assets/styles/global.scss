@@ -1,10 +1,13 @@
-@import './_reset.scss';
-@import './_palette.scss';
-@import './_transitions.scss';
-@import './_shadow.scss';
-@import './_featured.scss';
-@import './cursor';
-@import './cyber';
+/* Abstract */
+@import './abstract/_palette.scss';
+@import './abstract/_reset.scss';
+@import './abstract/_transitions.scss';
+
+/* Base */
+@import './base/cursor';
+@import './base/cyber';
+@import './base/_featured.scss';
+@import './base/_shadow.scss';
 
 * {
   font-family: 'Turret Road', sans-serif;

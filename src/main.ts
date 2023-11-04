@@ -1,6 +1,6 @@
 import App from './App.vue'
 import { directivesMap } from './shared/directives'
-import { initializeDirectives, initializeRouter, initializeStore } from './initializators'
+import { initializeDirectives, initializeRouter, initializeStore } from './app/initializators'
 import { routes } from './pages/routes'
 import '../assets/styles/global.scss'
 import '@unocss/reset/tailwind.css'
